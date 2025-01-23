@@ -1,3 +1,31 @@
-<img src="<%= rootURL %>" alt="">
+<!-- <img src="<%= rootURL %>" alt=""> -->
+<%- include('./_mv.ejs') %>
+<div class="contents">
+    <div class="contents-inner">
+        
+        <h1>
+            2025 SPRING
+        </h1>
+        <ul class="nav">
+            <li class="nav_feed">
+                FEED
+            </li>
+            <li class="nav_index">
+                INDEX
+            </li>
+        </ul>
+        
+        <main class="main">
+            <%- include('./_main.ejs') %>
+        </main>
+    </div>
+</div>
+<footer class="footer">
+    <%- include('./_foot.ejs') %> 
+</footer>
+<%- include('./_index.ejs') %> 
 
-<script src="<%= rootURL %>assets/js/index.js"></script>
+
+
+
+<script src="<%= rootURL %>/assets/js/index.js"></script>

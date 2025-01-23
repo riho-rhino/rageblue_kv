@@ -1,0 +1,55 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+
+// MVからスクロールしてきたら出すようにする
+
+h1{
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    font-size: calc(10 / c.$spw * 100vw);
+}
+
+.nav{
+    position: fixed;
+    display: flex;
+    top: 10px;
+    right: 20px;
+    li{
+        // border-bottom: solid 1.5px #7c7b7b;
+        font-size: calc(10 / c.$spw * 100vw);
+        padding-left: 10px;
+        padding-bottom: calc(5 / c.$spw) * 100%;
+        position: relative;
+        line-height: 1;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: #7c7b7b;
+            margin-bottom: calc(-25 / c.$spw) * 100%;
+            clip-path: inset(0);
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: #000;
+            margin-bottom: calc(-25 / c.$spw) * 100%;
+            clip-path: inset(0);
+        }
+    }
+
+    .nav_feed{
+        margin-right: 10px;
+    }
+
+}

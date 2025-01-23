@@ -1,3 +1,12 @@
-import hellow from "./_modules/_test"
+import Swiper from 'swiper';
 
-hellow()
+
+const swiper = new Swiper('.swiper', {
+    loop: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+
+  });

@@ -1,0 +1,49 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+.style{
+    margin-top: calc(100 / c.$spw) * 100%;
+}
+
+.items_detail{
+    margin: calc(10 / c.$spw) * 100% calc(20 / c.$spw) * 100%;
+    .item_name{
+        font-size: calc(11.5 / c.$spw * 100vw);
+        display: inline-block;
+        text-align: center;
+        a{
+            color: #000;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            gap: 5px;
+        }
+        span{
+            line-height: 1;
+        }
+        .name-price{
+            font-size: calc(18 / c.$spw * 100vw);
+            
+        }
+        .buy{
+            font-size: calc(8.13 / c.$spw * 100vw);
+            border: solid 0.5px #000;
+            border-radius: 15px;
+            padding: 1.5px 5px;
+        }
+    }   
+}
+
+.item_flex{
+    display: flex;
+    gap: 10px;
+}
+
+.ph_wrap{
+    margin-top: calc(40 / c.$spw) * 100%;
+}
+
+.second_line{
+    margin-top: calc(7.3 / c.$spw) * 100%;
+}
