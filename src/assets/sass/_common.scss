@@ -7,9 +7,6 @@ $pcw : 1280;
 body{
     color: #000;
     font-family: Helvetica;
-    &.noscroll {
-        overflow: hidden;
-      }
 }
 
 .pc{

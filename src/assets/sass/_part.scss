@@ -5,6 +5,16 @@
 
 // MVからスクロールしてきたら出すようにする
 
+.top_wrap{
+    width: 100%;
+    position: fixed;
+    z-index: 450;
+    top: 0;
+    left: 0;
+    padding-top: calc(60 / c.$spw) * 100%;
+    
+}
+
 h2{
     position: fixed;
     top: 10px;
@@ -71,3 +81,61 @@ h2{
     }
 
 }
+.numbers{
+    display: flex;
+    margin-left: 20px;
+    .number{
+        font-size: calc(10 / c.$spw) * 100%;
+        padding-right: 5px;
+        color: #000;
+        opacity: 0.5;
+        transition: opacity .2s ease;
+    }
+}
+
+
+
+.contents:has(#style1.on) .num_anchor .sp-numbers li:nth-child(1){
+    opacity: 1;
+}
+
+.contents:has(#style1.on) .num_anchor .sp-numbers li:not(:nth-child(1)){
+    opacity: 0.5;
+}
+
+
+.contents:has(#style2.on) .num_anchor .sp-numbers li:nth-child(2){
+    opacity: 1;
+}
+
+.contents:has(#style2.on) .num_anchor .sp-numbers li:not(:nth-child(2)){
+    opacity: 0.5;
+}
+
+
+.contents:has(#style3.on) .num_anchor .sp-numbers li:nth-child(3){
+    opacity: 1;
+}
+
+.contents:has(#style3.on) .num_anchor .sp-numbers li:not(:nth-child(3)){
+    opacity: 0.5;
+}
+
+
+.contents:has(#style4.on) .num_anchor .sp-numbers li:nth-child(4){
+    opacity: 1;
+}
+
+.contents:has(#style4.on) .num_anchor .sp-numbers li:not(:nth-child(4)){
+    opacity: 0.5;
+}
+
+.contents:has(#style5.on) .num_anchor .sp-numbers li:nth-child(5){
+    opacity: 1;
+}
+
+.contents:has(#style5.on) .num_anchor .sp-numbers li:not(:nth-child(5)){
+    opacity: 0.5;
+}
+
+

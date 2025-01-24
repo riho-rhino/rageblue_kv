@@ -8,6 +8,20 @@
     padding-top: calc(100 / c.$spw) * 100%;
 }
 
+.sp-main{
+    
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    
+}
+
+.sp-style{
+    scroll-snap-align: start;
+    height: 100vh;
+    
+}
+
 .swiper{
     padding-top: 22px!important;
     .swiper-pagination{

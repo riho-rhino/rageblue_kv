@@ -294,9 +294,6 @@ body {
   color: #000;
   font-family: Helvetica;
 }
-body.noscroll {
-  overflow: hidden;
-}
 
 .pc {
   display: none;
@@ -321,6 +318,17 @@ body.noscroll {
 }
 .style {
   padding-top: 26.6666666667%;
+}
+
+.sp-main {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+.sp-style {
+  scroll-snap-align: start;
+  height: 100vh;
 }
 
 .swiper {
@@ -442,6 +450,15 @@ body.noscroll {
   max-width: 600px;
 }
 
+.top_wrap {
+  width: 100%;
+  position: fixed;
+  z-index: 450;
+  top: 0;
+  left: 0;
+  padding-top: 16%;
+}
+
 h2 {
   position: fixed;
   top: 10px;
@@ -507,6 +524,58 @@ h2 {
   border-radius: 50%;
   width: 2px;
   height: 2px;
+}
+
+.numbers {
+  display: flex;
+  margin-left: 20px;
+}
+.numbers .number {
+  font-size: 2.6666666667%;
+  padding-right: 5px;
+  color: #000;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.contents:has(#style1.on) .num_anchor .sp-numbers li:nth-child(1) {
+  opacity: 1;
+}
+
+.contents:has(#style1.on) .num_anchor .sp-numbers li:not(:nth-child(1)) {
+  opacity: 0.5;
+}
+
+.contents:has(#style2.on) .num_anchor .sp-numbers li:nth-child(2) {
+  opacity: 1;
+}
+
+.contents:has(#style2.on) .num_anchor .sp-numbers li:not(:nth-child(2)) {
+  opacity: 0.5;
+}
+
+.contents:has(#style3.on) .num_anchor .sp-numbers li:nth-child(3) {
+  opacity: 1;
+}
+
+.contents:has(#style3.on) .num_anchor .sp-numbers li:not(:nth-child(3)) {
+  opacity: 0.5;
+}
+
+.contents:has(#style4.on) .num_anchor .sp-numbers li:nth-child(4) {
+  opacity: 1;
+}
+
+.contents:has(#style4.on) .num_anchor .sp-numbers li:not(:nth-child(4)) {
+  opacity: 0.5;
+}
+
+.contents:has(#style5.on) .num_anchor .sp-numbers li:nth-child(5) {
+  opacity: 1;
+}
+
+.contents:has(#style5.on) .num_anchor .sp-numbers li:not(:nth-child(5)) {
+  opacity: 0.5;
 }
 
 .footer_logo {
