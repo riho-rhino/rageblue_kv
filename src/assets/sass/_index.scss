@@ -1,0 +1,120 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+.overlay{
+    position: fixed;
+    top: 0;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    z-index: 400;
+    background-color:#fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+    &.show{
+        visibility: visible;
+        opacity: 1;
+        transition: all .5s ease;
+    }
+    @include pc{
+        height: 100vh;
+    }
+    
+}
+.index_wrap{
+    padding-top: calc(63 / c.$spw) * 100%;
+    @include pc{
+        padding-top: calc(63 / c.$pcw) * 100%;
+
+    }
+}
+.index_inner {
+    height: 100%;
+    overflow: scroll; /* スクロール設定 */
+  }
+
+.index_content{
+    display: flex;
+    flex-wrap: wrap;
+    .index_ph{
+        width: 50%;
+        height: auto;
+        line-height: 0;
+        @include pc{
+            width: 20%;
+        }
+    }
+}
+
+.index_logo{
+    width: calc(118.59 / c.$spw) * 100%;
+    margin-top: calc(125 / c.$spw) * 100%;
+    margin-left: calc(15.6  / c.$spw) * 100%;
+    
+}
+
+.index_credit{
+    margin-top: calc(27.4 / c.$spw) * 100%;
+    margin-left: calc(15.6  / c.$spw) * 100%;
+    font-size: calc(9 / c.$spw * 100vw);
+    line-height: 1.5;
+    
+}
+
+.index_sns{
+    display: flex;
+    margin-top: calc(23.4 / c.$spw) * 100%;
+    margin-left: calc(15.6  / c.$spw) * 100%;
+    vertical-align: middle;
+    align-items: center;
+    gap: calc(13.9 / c.$spw) * 100%;
+
+    .x,
+    .tiktok{
+        width: calc(17.76 / c.$spw) * 100%;
+        line-height: 0;
+        
+    }
+    .insta,
+    .line{
+        width: calc(20.02 / c.$spw) * 100%;
+        line-height: 0;
+        
+    }
+}
+
+
+.index_copy{
+    margin-top: calc(13.5 / c.$spw) * 100%;
+    margin-left: calc(15.6  / c.$spw) * 100%;
+    margin-bottom: calc(23.6  / c.$spw) * 100%;
+    font-size: calc(8 /c.$spw * 100vw);
+    
+}
+
+.pc-index_wrap{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.index_flex{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    
+}
+
+.pc-index_credit{
+    font-size: calc(10 / c.$pcw * 100vw);
+}
+
+.pc-index_sns{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+

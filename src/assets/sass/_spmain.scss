@@ -1,0 +1,102 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+
+
+.style{
+    padding-top: calc(100 / c.$spw) * 100%;
+}
+
+.swiper{
+    padding-top: 22px!important;
+    .swiper-pagination{
+      top: 0!important;
+      right: 0!important;
+      left: unset!important;
+      bottom: unset!important;
+      width: auto!important;
+      line-height: 0;
+      margin-right: 13px;
+    }
+  }
+
+/* ページネーションのサイズと色 */
+.swiper-pagination-bullet {
+    background-color: #9D9D9D;
+    height: 2px!important;
+    width: 70px!important;
+    border-radius: 0!important;
+  }
+  .swiper-pagination-bullet-active {
+        background: #393939!important;
+    }
+  .swiper-slide{
+    line-height: 0;
+    img {
+        height: auto;
+        width: 100%;
+    }
+  }
+  
+
+.items_detail{
+    margin: calc(23 / c.$spw) * 100% 0 calc(22 / c.$spw) * 100% calc(15 / c.$spw) * 100%;
+    .item_name{
+        display: inline-block;
+        text-align: center;
+        &:hover{
+            .buy{
+                color: #fff;
+                background: #000;
+            }
+            .name-price,
+            .slash{
+                opacity: 0.7;
+            }
+        }
+        a{
+            color: #000;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            gap: 4.5px;
+        }
+        span{
+            line-height: 1;
+            display: block;
+        }
+        .name-price,
+        .slash{
+            font-size: calc(11.5 / c.$spw * 100vw);
+            opacity: 1;
+            transition: all .3s ease;
+            @include pc{
+                font-size: calc(12 / c.$pcw * 100vw);
+            }
+        }
+        .buy{
+            font-size: calc(8.13 / c.$spw * 100vw);
+            border: solid 0.5px #000;
+            border-radius: 15px;
+            padding: 2.5px 5px 0;
+            margin-bottom: 2px;
+            color: #000;
+            background: none;
+            transition: all .3s ease;
+            @include pc{
+                font-size: calc(8.5 / c.$pcw * 100vw);
+            }
+        }
+        
+    }   
+}
+
+.item_flex{
+    display: flex;
+    gap: 10px;
+}
+
+.second_line{
+    margin-top: calc(7.3 / c.$spw) * 100%;
+}

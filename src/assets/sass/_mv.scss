@@ -2,6 +2,94 @@
 @use './_mixin' as *;
 @use './_common' as c;
 
-.mv{
+
+.contents{
+    opacity: 0;
+    &.show{
+        transition: opacity .5s ease;
+        opacity: 1;
+    }
+    &.clickshow{
+        transition: opacity 1s .3s ease;
+        opacity: 1;
+    }
+}
+
+.mv_wrap{
     overflow: hidden;
+    height: 100vh;
+    z-index: 600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+.mv{
+    
+    position: relative;
+    
+    
+    .ttl-wrap{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: calc(460 / c.$spw) * 100%;
+        width: calc(276.84 / c.$spw) * 100%;
+        text-align: center;
+    }
+    h1{
+        width: 100%;
+        line-height: 0;
+    }
+    .subttl{
+        font-size: calc(13 / c.$spw * 100vw);
+        margin-top: calc(14.6 / c.$spw) * 100%;
+        color: #fff;
+    }
+}
+
+.skip{
+    text-align: center;
+    color: #fff;
+    margin-top: calc(67.3 / c.$spw) * 100%;
+    font-size: calc(10 / c.$spw * 100vw);
+    position: relative;
+    padding-bottom: 9px;
+    .arrow{
+        width: 9px;
+        height: 9px;
+        border: 1px solid;
+        border-color:  transparent transparent #fff #fff;
+        transform:translate(-50%,0) rotate(-45deg);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        opacity: 1;
+        animation: arrow 3s infinite linear;
+    }
+}
+
+@keyframes arrow{
+    0%{
+        transform:translate(-50%,0) rotate(-45deg);
+        opacity: 1;
+    }
+    30%{
+        transform:translate(-50%,0) rotate(-45deg);
+        opacity: 1;
+    }
+    80%{
+        transform:translate(-50%,20px) rotate(-45deg);
+        opacity: 0;
+    }
+    81%{
+        transform:translate(-50%,0) rotate(-45deg);
+        opacity: 0;
+    }
+    100%{
+        transform:translate(-50%,0) rotate(-45deg);
+        opacity: 1;
+    }
 }

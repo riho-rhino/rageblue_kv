@@ -6,6 +6,10 @@ $pcw : 1280;
 
 body{
     color: #000;
+    font-family: Helvetica;
+    &.noscroll {
+        overflow: hidden;
+      }
 }
 
 .pc{
@@ -23,3 +27,9 @@ body{
         display: none;
     } 
 }
+
+@font-face {
+    font-family: "Helvetica"; /*任意のフォントファミリー名でOK*/
+    src: url("../font/HelveticaNeueLTStd-Md.otf") format("truetype"); /*fontがあるパスを書いて、formatを指定*/
+    font-display: swap; 
+  }

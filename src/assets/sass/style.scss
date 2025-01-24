@@ -1,8 +1,10 @@
 @use './_reset';
 @use './_mixin' as m;
 @use './_common' as c;
-@use './_main';
+@use './_spmain';
+@use './_pcmain';
 @use './_part';
 @use './_footer';
 @use './_mv';
+@use './_index';
 @use './_modules/_swiper';

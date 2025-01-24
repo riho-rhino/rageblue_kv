@@ -292,6 +292,10 @@ img {
 
 body {
   color: #000;
+  font-family: Helvetica;
+}
+body.noscroll {
+  overflow: hidden;
 }
 
 .pc {
@@ -310,36 +314,100 @@ body {
     display: none;
   }
 }
+@font-face {
+  font-family: "Helvetica"; /*任意のフォントファミリー名でOK*/
+  src: url("../font/HelveticaNeueLTStd-Md.otf") format("truetype"); /*fontがあるパスを書いて、formatを指定*/
+  font-display: swap;
+}
 .style {
-  margin-top: 26.6666666667%;
+  padding-top: 26.6666666667%;
+}
+
+.swiper {
+  padding-top: 22px !important;
+}
+.swiper .swiper-pagination {
+  top: 0 !important;
+  right: 0 !important;
+  left: unset !important;
+  bottom: unset !important;
+  width: auto !important;
+  line-height: 0;
+  margin-right: 13px;
+}
+
+/* ページネーションのサイズと色 */
+.swiper-pagination-bullet {
+  background-color: #9D9D9D;
+  height: 2px !important;
+  width: 70px !important;
+  border-radius: 0 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #393939 !important;
+}
+
+.swiper-slide {
+  line-height: 0;
+}
+.swiper-slide img {
+  height: auto;
+  width: 100%;
 }
 
 .items_detail {
-  margin: 2.6666666667% 5.3333333333%;
+  margin: 6.1333333333% 0 5.8666666667% 4%;
 }
 .items_detail .item_name {
-  font-size: 3.0666666667vw;
   display: inline-block;
   text-align: center;
+}
+.items_detail .item_name:hover .buy {
+  color: #fff;
+  background: #000;
+}
+.items_detail .item_name:hover .name-price,
+.items_detail .item_name:hover .slash {
+  opacity: 0.7;
 }
 .items_detail .item_name a {
   color: #000;
   display: flex;
   align-items: center;
   vertical-align: middle;
-  gap: 5px;
+  gap: 4.5px;
 }
 .items_detail .item_name span {
   line-height: 1;
+  display: block;
 }
-.items_detail .item_name .name-price {
-  font-size: 4.8vw;
+.items_detail .item_name .name-price,
+.items_detail .item_name .slash {
+  font-size: 3.0666666667vw;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+@media screen and (min-width: 769px) {
+  .items_detail .item_name .name-price,
+  .items_detail .item_name .slash {
+    font-size: 0.9375vw;
+  }
 }
 .items_detail .item_name .buy {
   font-size: 2.168vw;
   border: solid 0.5px #000;
   border-radius: 15px;
-  padding: 1.5px 5px;
+  padding: 2.5px 5px 0;
+  margin-bottom: 2px;
+  color: #000;
+  background: none;
+  transition: all 0.3s ease;
+}
+@media screen and (min-width: 769px) {
+  .items_detail .item_name .buy {
+    font-size: 0.6640625vw;
+  }
 }
 
 .item_flex {
@@ -347,19 +415,47 @@ body {
   gap: 10px;
 }
 
-.ph_wrap {
-  margin-top: 10.6666666667%;
-}
-
 .second_line {
   margin-top: 1.9466666667%;
 }
 
-h1 {
+.pc_style_inner {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+
+.pc-style_left,
+.pc-style_right {
+  width: 26.953125%;
+  max-width: 400px;
+}
+
+.pc-style_right .right_img {
+  width: 59.1304347826%;
+  margin: 0 7.9710144928% 0 auto;
+}
+
+.pc-style_center {
+  width: 46.5625%;
+  max-width: 600px;
+}
+
+h2 {
   position: fixed;
   top: 10px;
   left: 20px;
   font-size: 2.6666666667vw;
+  font-weight: normal;
+  z-index: 500;
+}
+@media screen and (min-width: 769px) {
+  h2 {
+    font-size: 0.9375vw;
+    top: 0;
+    margin-top: 2.34375%;
+  }
 }
 
 .nav {
@@ -367,6 +463,13 @@ h1 {
   display: flex;
   top: 10px;
   right: 20px;
+  z-index: 500;
+}
+@media screen and (min-width: 769px) {
+  .nav {
+    top: 0;
+    margin-top: 2.34375%;
+  }
 }
 .nav li {
   font-size: 2.6666666667vw;
@@ -375,36 +478,300 @@ h1 {
   position: relative;
   line-height: 1;
 }
-.nav li::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background: #7c7b7b;
-  margin-bottom: -6.6666666667%;
-  -webkit-clip-path: inset(0);
-          clip-path: inset(0);
-}
-.nav li::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background: #000;
-  margin-bottom: -6.6666666667%;
-  -webkit-clip-path: inset(0);
-          clip-path: inset(0);
+@media screen and (min-width: 769px) {
+  .nav li {
+    font-size: 0.9375vw;
+  }
 }
 .nav .nav_feed {
   margin-right: 10px;
+  opacity: 1;
+  transform: opacity 0.3s ease;
+}
+.nav .nav_feed.hidden {
+  opacity: 0.5;
+}
+.nav .nav_index {
+  opacity: 0.5;
+  transform: opacity 0.3s ease;
+}
+.nav .nav_index.show {
+  opacity: 1;
+}
+.nav .nav_index::after {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  content: "";
+  background: #000;
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+}
+
+.footer_logo {
+  width: 31.624%;
+  margin-top: 33.3333333333%;
+  margin-left: 4.16%;
+}
+@media screen and (min-width: 769px) {
+  .footer_logo {
+    width: 9.26484375%;
+  }
+}
+
+.footer_credit {
+  margin-top: 7.3066666667%;
+  margin-left: 4.16%;
+  font-size: 2.4vw;
+  line-height: 1.5;
+}
+@media screen and (min-width: 769px) {
+  .footer_credit {
+    font-size: 0.703125vw;
+  }
+}
+
+.footer_sns {
+  display: flex;
+  margin-top: 6.24%;
+  margin-left: 4.16%;
+  vertical-align: middle;
+  align-items: center;
+  gap: 3.7066666667%;
+}
+.footer_sns .x,
+.footer_sns .tiktok {
+  width: 4.736%;
+  line-height: 0;
+}
+@media screen and (min-width: 769px) {
+  .footer_sns .x,
+  .footer_sns .tiktok {
+    width: 1.3875%;
+  }
+}
+.footer_sns .insta,
+.footer_sns .line {
+  width: 5.3386666667%;
+  line-height: 0;
+}
+@media screen and (min-width: 769px) {
+  .footer_sns .insta,
+  .footer_sns .line {
+    width: 1.5640625%;
+  }
+}
+
+.footer_copy {
+  margin-top: 3.6%;
+  margin-left: 4.16%;
+  margin-bottom: 6.2933333333%;
+  font-size: 2.1333333333vw;
+}
+@media screen and (min-width: 769px) {
+  .footer_copy {
+    font-size: 0.625vw;
+  }
+}
+
+.contents {
+  opacity: 0;
+}
+.contents.show {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+.contents.clickshow {
+  transition: opacity 1s 0.3s ease;
+  opacity: 1;
+}
+
+.mv_wrap {
+  overflow: hidden;
+  height: 100vh;
+  z-index: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .mv {
-  overflow: hidden;
+  position: relative;
+}
+.mv .ttl-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 122.6666666667%;
+  width: 73.824%;
+  text-align: center;
+}
+.mv h1 {
+  width: 100%;
+  line-height: 0;
+}
+.mv .subttl {
+  font-size: 3.4666666667vw;
+  margin-top: 3.8933333333%;
+  color: #fff;
+}
+
+.skip {
+  text-align: center;
+  color: #fff;
+  margin-top: 17.9466666667%;
+  font-size: 2.6666666667vw;
+  position: relative;
+  padding-bottom: 9px;
+}
+.skip .arrow {
+  width: 9px;
+  height: 9px;
+  border: 1px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: translate(-50%, 0) rotate(-45deg);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  opacity: 1;
+  animation: arrow 3s infinite linear;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translate(-50%, 0) rotate(-45deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-50%, 0) rotate(-45deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, 20px) rotate(-45deg);
+    opacity: 0;
+  }
+  81% {
+    transform: translate(-50%, 0) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(-45deg);
+    opacity: 1;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  z-index: 400;
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.overlay.show {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+@media screen and (min-width: 769px) {
+  .overlay {
+    height: 100vh;
+  }
+}
+
+.index_wrap {
+  padding-top: 16.8%;
+}
+@media screen and (min-width: 769px) {
+  .index_wrap {
+    padding-top: 4.921875%;
+  }
+}
+
+.index_inner {
+  height: 100%;
+  overflow: scroll; /* スクロール設定 */
+}
+
+.index_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.index_content .index_ph {
+  width: 50%;
+  height: auto;
+  line-height: 0;
+}
+@media screen and (min-width: 769px) {
+  .index_content .index_ph {
+    width: 20%;
+  }
+}
+
+.index_logo {
+  width: 31.624%;
+  margin-top: 33.3333333333%;
+  margin-left: 4.16%;
+}
+
+.index_credit {
+  margin-top: 7.3066666667%;
+  margin-left: 4.16%;
+  font-size: 2.4vw;
+  line-height: 1.5;
+}
+
+.index_sns {
+  display: flex;
+  margin-top: 6.24%;
+  margin-left: 4.16%;
+  vertical-align: middle;
+  align-items: center;
+  gap: 3.7066666667%;
+}
+.index_sns .x,
+.index_sns .tiktok {
+  width: 4.736%;
+  line-height: 0;
+}
+.index_sns .insta,
+.index_sns .line {
+  width: 5.3386666667%;
+  line-height: 0;
+}
+
+.index_copy {
+  margin-top: 3.6%;
+  margin-left: 4.16%;
+  margin-bottom: 6.2933333333%;
+  font-size: 2.1333333333vw;
+}
+
+.pc-index_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index_flex {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.pc-index_credit {
+  font-size: 0.78125vw;
+}
+
+.pc-index_sns {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
 }
 
 /**

@@ -1,0 +1,27 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+.pc_style_inner{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    
+}
+.pc-style_left,
+.pc-style_right{
+    width: calc(345 / c.$pcw) * 100%;
+    max-width: 400px;
+}
+.pc-style_right{
+    .right_img{
+        width: calc(204 / 345) * 100%;
+        margin: 0 calc(27.5 / 345) * 100% 0 auto;
+    }
+}
+
+.pc-style_center{
+    width: calc(596 / c.$pcw) * 100%;
+    max-width: 600px;
+}
