@@ -65,8 +65,14 @@ $(window).on('scroll', function () {
 });
 
 
+$(document).ready(function () {
+    setInterval(function () {
+        styleOn();
+    }, 100); // 100ミリ秒ごとにチェック
+});
+
 function styleOn() {
-    $('.item').each(function () {
+    $('.sp-style').each(function () {
         var element = $(this);
         var elementTop = element.offset().top;
         var windowTop = $(window).scrollTop();
