@@ -83,6 +83,7 @@
         width: calc(20.02 / c.$spw) * 100%;
         line-height: 0;
         
+        
     }
 }
 
@@ -96,25 +97,74 @@
 }
 
 .pc-index_wrap{
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    padding-top: calc(97.1 / c.$pcw) * 100%;
     
+}
+
+
+
+.pc-index_credit{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: calc(10 / c.$pcw * 100vw);
+}
+
+.pc-index_right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 28px;
+    width: 100%;
+    text-align: right;
+
 }
 
 .index_flex{
     display: flex;
     vertical-align: middle;
     align-items: center;
-    
-}
-
-.pc-index_credit{
-    font-size: calc(10 / c.$pcw * 100vw);
+    justify-content: end;
 }
 
 .pc-index_sns{
     display: flex;
     vertical-align: middle;
     align-items: center;
+    justify-content: space-between;
+    width: calc(122 / c.$pcw) * 100%;
+    .x,
+    .tiktok{
+        @include pc{
+            line-height: 0;
+            width: calc(17.98 / 122) * 100%;
+        } 
+    }
+
+    .insta,
+    .line{
+        @include pc{
+            line-height: 0;
+            width: calc(20.28 / 122) * 100%;
+        }
+        
+    }
+    
+    
 }
 
+.pc-index_logo{
+    width: calc(135.4 / c.$pcw) * 100%;
+    padding-right: calc(19 / c.$pcw) * 100%;
+    border-right: solid #000 2px;
+    margin-right: calc(19 / c.$pcw) * 100%;
+}
+
+.pc-index_copy{
+    font-weight: lighter;
+    width: 100%;
+    font-size: calc(8 / c.$pcw * 100vw);
+    margin-top: calc(13.4 / c.$pcw) * 100%;
+}

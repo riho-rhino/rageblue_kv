@@ -1,8 +1,12 @@
 @use './_reset';
 @use './_mixin' as *;
 @use './_common' as c;
+.contents{
+    cursor: url('../img/cursol_scroll.png') 0 30, auto;
+}
 .pc-main{
     overflow: scroll;
+    
 }
 
 
@@ -11,21 +15,20 @@
     height: 100vh;
     content: "";
     display: block;
-    
-}
-.pc-style_inner{
-    width: 100%;
-    position: fixed;
-    height: 100vh;
-    top: 0;
+    .pc-style_inner{
+        width: 100%;
+        position: fixed;
+        height: 100vh;
+        top: 0;
+    }
+    .pc-inner_wrap{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
 }
 
 
-.pc-inner_wrap{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
 
 .style_absolute{
     position: absolute;
@@ -40,6 +43,12 @@
     justify-content: space-around;
 }
 
+.position_relative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .pc-style_left,
 .pc-style_right{
     width: calc(345 / c.$pcw) * 100%;
@@ -47,6 +56,7 @@
 }
 .pc-style_right{
     .right_img{
+        cursor: url('../img/cursol_circle.png') 0 17, auto;
         width: calc(204 / 345) * 100%;
         margin: 0 calc(27.5 / 345) * 100% 0 auto;
         position: relative;
@@ -58,15 +68,54 @@
     }
 }
 
+.pc_pagenation{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(123.5 / 345) * 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: calc(-310 / 345) * 100%;
+    vertical-align: middle;
+    align-items: center;
+    .pagenation_left,
+    .pagenation_right{
+        width: calc(60 / 123.5) * 100%;
+        background: #000;
+    }   
+    .pagenation_left{
+        height: 2px;
+    }
+    .pagenation_right{
+        height: 1px;
+    }
+}
+
+.pc-style_left{
+    &.change{
+        .pagenation_left{
+            height: 1px;
+        }
+        .pagenation_right{
+            height: 2px;
+        }
+    }
+}
+
 .pc_numbers{
     position: absolute;
     bottom: 0;
     left: 0;
-    letter-spacing: 0.5em;
-    margin-left: 4%;
     opacity: 1;
+    margin-bottom: calc(-350 / 345) * 100%;
+    
     span{
-        opacity: 0.5!important;
+        margin-right: 6px;
+        opacity: 0.5;
+        line-height: 1;
+    }
+    .celect{
+        opacity: 1;
     }
     
 }
@@ -75,7 +124,7 @@
     width: calc(596 / c.$pcw) * 100%;
     max-width: 600px;
     position: relative;
-    
+    line-height: 0;
     
     &.change{
         .change_img{
@@ -248,11 +297,13 @@
 .contents:has(#pc-style11.on) .pc-main .pc-style:not(:nth-child(11)){
     opacity:0;
     pointer-events: none;
-    
 }
-.contents:has(#footer.on) .pc-main .sp-numbers .number{
+.contents:has(#pc-footer.on) .pc-main .pc-style:nth-child(12){
+    opacity: 1;
+    pointer-events: visible;
+}
+.contents:has(#pc-footer.on) .pc-main .pc-style:not(:nth-child(12)){
     opacity:0;
     pointer-events: none;
-    
 }
 

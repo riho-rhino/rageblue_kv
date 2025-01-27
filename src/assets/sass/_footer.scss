@@ -2,21 +2,44 @@
 @use './_mixin' as *;
 @use './_common' as c;
 
+.pc-footer{
+    position: relative;
+    .footer_inner{
+        width: 100%;
+        position: fixed;
+        height: 100vh;
+        top: 0;
+    }
+    
+}
+
 .sp-footer{
     position: relative;
 }
+
 .footer_wrap{
     position: absolute;
     top: 0;
     left: 0;
     margin-left: calc(15.6  / c.$spw) * 100%;
     margin-top: calc(123.6  / c.$spw) * 100%;
+    @include pc{
+        width: 100%;
+        max-width: 1500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin-left: 0;
+        margin-top: 0;
+    }
 }
 
 .footer_logo{
     width: calc(118.59 / c.$spw) * 100%;
     @include pc{
-        width: calc(118.59 / c.$pcw) * 100%;
+        width: calc(162.57 / c.$pcw) * 100%;
+        max-width: 163px;
+        margin-left: calc(28 / c.$pcw) * 100%;
     }
 
 }
@@ -26,7 +49,9 @@
     font-size: calc(9 / c.$spw * 100vw);
     line-height: 1.5;
     @include pc{
-        font-size: calc(9 /c.$pcw * 100vw);
+        margin-top: calc(17.5 / c.$pcw) * 100%;
+        font-size: calc(10 /c.$pcw * 100vw);
+        margin-left: calc(28 / c.$pcw) * 100%;
     }
 }
 
@@ -36,6 +61,11 @@
     vertical-align: middle;
     align-items: center;
     gap: calc(13.9 / c.$spw) * 100%;
+    @include pc{
+        margin-top: calc(21.6 / c.$pcw) * 100%;
+        gap: calc(15.6 / c.$pcw) * 100%;
+        margin-left: calc(28 / c.$pcw) * 100%;
+    }
 
     .x,
     .tiktok{
@@ -43,6 +73,7 @@
         line-height: 0;
         @include pc{
             width: calc(17.76 / c.$pcw) * 100%;
+            max-width: 18px;
         }
     }
     .insta,
@@ -51,15 +82,21 @@
         line-height: 0;
         @include pc{
             width: calc(20.02 / c.$pcw) * 100%;
+            max-width: 21px;
         }
     }
 }
-
-
+    
+    
 .footer_copy{
     margin-top: calc(13.5 / c.$spw) * 100%;
     font-size: calc(8 /c.$spw * 100vw);
+    margin-left: calc(28 / c.$pcw) * 100%;
     @include pc{
+        margin-top: calc(12.3 / c.$pcw) * 100%;
         font-size: calc(8 /c.$pcw * 100vw);
     }
 }
+
+
+

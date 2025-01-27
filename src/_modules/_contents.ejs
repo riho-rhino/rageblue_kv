@@ -4,16 +4,23 @@
     <div class="contents-inner">
         <div class="top_wrap">
             <h2>
-                2025 SPRING
-            </h2>
-            <ul class="nav">
-                <li class="nav_feed">
-                    FEED
-                </li>
-                <li class="nav_index">
-                    INDEX
-                </li>
-            </ul>
+                <a href="https://www.dot-st.com/rageblue/" target="_blank">
+                    <img src="<%= rootURL %>/assets/img/top_ragelogo.png" alt="">
+                </a>
+            </h2>            
+            <div class="nav">
+                <div class="nav_inner">
+                    <div class="nav_index">
+                        <img src="<%= rootURL %>/assets/img/alllook.png" alt="">
+                    </div>
+                    <div class="arrow">
+                        <img src="<%= rootURL %>/assets/img/arrow.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="close_wrap">
+                <div class="close"></div>
+            </div>
             <div class="num_anchor sp">
                 <ul class="sp-numbers numbers"> 
                     <li class="num_1 number">
@@ -59,9 +66,6 @@
         <div class="pc-main pc">
             <%- include('./_pcmain.ejs') %>
         </div>
-        <footer class="footer pc">
-            <%- include('./_foot.ejs') %> 
-        </footer>
     </div>
 </div>
 <%- include('./_index.ejs') %> 

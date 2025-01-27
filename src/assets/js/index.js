@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay  } from 'swiper/modules';
 
 var $win = $(window);
 var $body       = $('body')
@@ -14,6 +14,7 @@ function tick(time) {
         }, time)
     })
 }
+
 async function opning() {
     $body.addClass('noscroll');
     await tick(5000);
@@ -33,8 +34,13 @@ $('.skip').on('click', function () {
 
 
 const swiper = new Swiper('.swiper', {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay],
     loop: true,
+
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: true,
+      },
   // ページネーション
   pagination: {
     el: '.swiper-pagination',
@@ -42,21 +48,22 @@ const swiper = new Swiper('.swiper', {
   });
 
 
-  $('.nav_index').on('click', function () {
-    $(this).addClass('show');
-    $('.nav_feed').addClass('hidden'); 
+  $('.nav').on('click', function () {
+    $(this).addClass('hidden');
+    $('.close_wrap').addClass('show'); 
     $('.overlay').addClass('show'); 
     $('.numbers').addClass('hidden'); 
-    
+    $('.top_wrap').addClass('hidden'); 
     $body.addClass('noscroll');
 });
 
-$('.nav_feed').on('click', function () {
-    $(this).removeClass('hidden');
-    $('.nav_index').removeClass('show'); 
+$('.close_wrap').on('click', function () {
+    $(this).removeClass('show');
+    $('.nav').removeClass('hidden'); 
     $('.overlay').removeClass('show'); 
-    $body.removeClass('noscroll');
     $('.numbers').removeClass('hidden'); 
+    $('.top_wrap').removeClass('hidden'); 
+    $body.removeClass('noscroll');
 });
 
 $(window).on('scroll', function () {
@@ -122,11 +129,12 @@ $(window).on('load', function () {
             $('.sp-main').css('scroll-snap-type', 'y mandatory');
 
             
-            $('.nav_feed').removeClass('hidden'); 
-            $('.nav_index').removeClass('show'); 
+            $('.nav').removeClass('hidden'); 
+            $('.close_wrap').removeClass('show'); 
             $('.overlay').removeClass('show'); 
             $body.removeClass('noscroll');
             $('.numbers').removeClass('hidden'); 
+            $('.top_wrap').removeClass('hidden'); 
         }
 
         return false; 
@@ -146,8 +154,8 @@ $(document).ready(function() {
         if ($(targetId).length) {
             window.location.hash = targetId; // IDに飛ぶ
         }
-            $('.nav_feed').removeClass('hidden'); 
-            $('.nav_index').removeClass('show'); 
+            $('.nav').removeClass('hidden'); 
+            $('.close_wrap').removeClass('show'); 
             $('.overlay').removeClass('show'); 
             $body.removeClass('noscroll');
     });
@@ -156,15 +164,22 @@ $(document).ready(function() {
 
 
 
-$(document).ready(function () {
+
     $('.right_img').on('click', function () {
         var clickedImage = $(this);
-        var parentContainer = clickedImage.closest('.pc-style_right');
-        var correspondingStyleCenter = $('.pc-style_center'); // すべての.pc-style_centerを取得
+        var parentContainer = clickedImage.closest('.pc-style_right'); // .right_imgの親要素を取得
+        
+        // 親要素内の.pc-style_centerと.pc-style_leftを取得
+        var correspondingStyleCenter = parentContainer.siblings('.pc-style_center');
+        var correspondingStyleLeft = parentContainer.siblings('.pc-style_left');
+        
+        // .changeクラスをトグル
         correspondingStyleCenter.toggleClass('change');
+        correspondingStyleLeft.toggleClass('change');
         clickedImage.toggleClass('change');
     });
-});
+
+
 
 
 // $(window).on('load', function () {
