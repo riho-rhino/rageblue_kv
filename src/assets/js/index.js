@@ -134,29 +134,22 @@ $(window).on('load', function () {
 });
 
 
-$(window).on('load', function () {
-    $('.pcanchor_link a[href*="#"]').on('click', function (e) {
-        console.log('リンクがクリックされました'); // 追加
-        e.preventDefault(); // デフォルトのアンカーリンクの動作を防ぐ
-        var pcElmHash = $(this).attr('href');
-        var pcTarget = $(pcElmHash);
-
-        if (pcTarget.length) {
-            console.log('ターゲットが見つかりました:', pcTarget); 
-            var pcPos = pcTarget.position().top + $('.pc-main').scrollTop();
-            console.log(pcPos);
-            $('.pc-main').scrollTop(pcPos);
 
 
-            console.log('スクロールが実行されました');
-            
+$(document).ready(function() {
+    $('.pcanchor_link a').on('click', function(event) {
+        // デフォルトの動作をキャンセル
+        event.preventDefault();
+        // href属性からIDを取得
+        var targetId = $(this).attr('href');
+        // 一瞬でスクロール先の要素に移動
+        if ($(targetId).length) {
+            window.location.hash = targetId; // IDに飛ぶ
+        }
             $('.nav_feed').removeClass('hidden'); 
             $('.nav_index').removeClass('show'); 
             $('.overlay').removeClass('show'); 
             $body.removeClass('noscroll');
-        }
-
-        return false; 
     });
 });
 
@@ -173,3 +166,29 @@ $(document).ready(function () {
     });
 });
 
+
+// $(window).on('load', function () {
+//     $('.pcanchor_link a[href*="#"]').on('click', function (e) {
+//         console.log('リンクがクリックされました'); // 追加
+//         e.preventDefault(); // デフォルトのアンカーリンクの動作を防ぐ
+//         var pcElmHash = $(this).attr('href');
+//         var pcTarget = $(pcElmHash);
+
+//         if (pcTarget.length) {
+//             console.log('ターゲットが見つかりました:', pcTarget); 
+//             var pcPos = pcTarget.position().top + $('.pc-main').scrollTop();
+//             console.log(pcPos);
+//             $('.pc-main').scrollTop(pcPos);
+
+
+//             console.log('スクロールが実行されました');
+            
+//             $('.nav_feed').removeClass('hidden'); 
+//             $('.nav_index').removeClass('show'); 
+//             $('.overlay').removeClass('show'); 
+//             $body.removeClass('noscroll');
+//         }
+
+//         return false; 
+//     });
+// });
