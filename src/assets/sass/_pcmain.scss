@@ -1,6 +1,10 @@
 @use './_reset';
 @use './_mixin' as *;
 @use './_common' as c;
+.pc-main{
+    overflow: scroll;
+}
+
 
 .pc-style{
     width: 100%;
@@ -10,8 +14,8 @@
     
 }
 .pc-style_inner{
-    // position: fixed;
     width: 100%;
+    // position: fixed;
     height: 100vh;
     top: 0;
 }
@@ -130,125 +134,125 @@
 }
 
 
-.contents:has(#pc-style1.on) .pc-main .pc-style:nth-child(1){
-    opacity: 1;
-    pointer-events: visible;
-}
+// .contents:has(#pc-style1.on) .pc-main .pc-style:nth-child(1){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style1.on) .pc-main .pc-style:not(:nth-child(1)){
-    opacity:0;
-    pointer-events: none;
-}
+// .contents:has(#pc-style1.on) .pc-main .pc-style:not(:nth-child(1)){
+//     opacity:0;
+//     pointer-events: none;
+// }
 
 
-.contents:has(#pc-style2.on) .pc-main .pc-style:nth-child(2){
-    opacity: 1;
-    pointer-events: visible;
-}
+// .contents:has(#pc-style2.on) .pc-main .pc-style:nth-child(2){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style2.on) .pc-main .pc-style:not(:nth-child(2)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style2.on) .pc-main .pc-style:not(:nth-child(2)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
+// }
 
 
-.contents:has(#pc-style3.on) .pc-main .pc-style:nth-child(3){
-    opacity: 1;
-    pointer-events: visible;
-}
+// .contents:has(#pc-style3.on) .pc-main .pc-style:nth-child(3){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style3.on) .pc-main .pc-style:not(:nth-child(3)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style3.on) .pc-main .pc-style:not(:nth-child(3)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
+// }
 
 
-.contents:has(#pc-style4.on) .pc-main .pc-style:nth-child(4){
-    opacity: 1;
-    pointer-events: visible;
-}
+// .contents:has(#pc-style4.on) .pc-main .pc-style:nth-child(4){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style4.on) .pc-main .pc-style:not(:nth-child(4)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style4.on) .pc-main .pc-style:not(:nth-child(4)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
+// }
 
-.contents:has(#pc-style5.on) .pc-main .pc-style:nth-child(5){
-    opacity: 1;
-    pointer-events: visible;
-}
+// .contents:has(#pc-style5.on) .pc-main .pc-style:nth-child(5){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style5.on) .pc-main .pc-style:not(:nth-child(5)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style5.on) .pc-main .pc-style:not(:nth-child(5)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#pc-style6.on) .pc-main .pc-style:nth-child(6){
-    opacity: 1;
-    pointer-events: visible;
-}
+// }
+// .contents:has(#pc-style6.on) .pc-main .pc-style:nth-child(6){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style6.on) .pc-main .pc-style:not(:nth-child(6)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style6.on) .pc-main .pc-style:not(:nth-child(6)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#pc-style7.on) .pc-main .pc-style:nth-child(7){
-    opacity: 1;
-    pointer-events: visible;
-}
+// }
+// .contents:has(#pc-style7.on) .pc-main .pc-style:nth-child(7){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style7.on) .pc-main .pc-style:not(:nth-child(7)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style7.on) .pc-main .pc-style:not(:nth-child(7)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#pc-style8.on) .pc-main .pc-style:nth-child(8){
-    opacity: 1;
-    pointer-events: visible;
-}
+// }
+// .contents:has(#pc-style8.on) .pc-main .pc-style:nth-child(8){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style8.on) .pc-main .pc-style:not(:nth-child(8)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style8.on) .pc-main .pc-style:not(:nth-child(8)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#pc-style9.on) .pc-main .pc-style:nth-child(9){
-    opacity: 1;
-    pointer-events: visible;
-}
+// }
+// .contents:has(#pc-style9.on) .pc-main .pc-style:nth-child(9){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style9.on) .pc-main .pc-style:not(:nth-child(9)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style9.on) .pc-main .pc-style:not(:nth-child(9)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#pc-style10.on) .pc-main .pc-style:nth-child(10){
-    opacity: 1;
-    pointer-events: visible;
-}
+// }
+// .contents:has(#pc-style10.on) .pc-main .pc-style:nth-child(10){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style10.on) .pc-main .pc-style:not(:nth-child(10)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style10.on) .pc-main .pc-style:not(:nth-child(10)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#pc-style11.on) .pc-main .pc-style:nth-child(11){
-    opacity: 1;
-    pointer-events: visible;
-}
+// }
+// .contents:has(#pc-style11.on) .pc-main .pc-style:nth-child(11){
+//     opacity: 1;
+//     pointer-events: visible;
+// }
 
-.contents:has(#pc-style11.on) .pc-main .pc-style:not(:nth-child(11)){
-    opacity:0;
-    pointer-events: none;
+// .contents:has(#pc-style11.on) .pc-main .pc-style:not(:nth-child(11)){
+//     opacity:0;
+//     pointer-events: none;
     
-}
-.contents:has(#footer.on) .pc-main .sp-numbers .number{
-    opacity:0;
-    pointer-events: none;
+// }
+// .contents:has(#footer.on) .pc-main .sp-numbers .number{
+//     opacity:0;
+//     pointer-events: none;
     
-}
+// }
 

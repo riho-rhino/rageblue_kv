@@ -30,6 +30,6 @@ body{
 
 @font-face {
     font-family: "Helvetica"; /*任意のフォントファミリー名でOK*/
-    src: url("../font/HelveticaNeueLTStd-Md.otf") format("truetype"); /*fontがあるパスを書いて、formatを指定*/
+    src: url("../font/HelveticaNeueLTStd-Md.otf") format("truetype"); 
     font-display: swap; 
   }
