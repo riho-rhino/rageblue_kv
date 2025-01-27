@@ -108,30 +108,30 @@ function pcstyleOn() {
 }
 
 
-// $(window).on('load', function () {
-//     $('.anchor_link a[href*="#"]').on('click', function (e) {
-//         e.preventDefault(); // デフォルトのアンカーリンクの動作を防ぐ
-//         var elmHash = $(this).attr('href');
-//         var target = $(elmHash);
+$(window).on('load', function () {
+    $('.anchor_link a[href*="#"]').on('click', function (e) {
+        e.preventDefault(); // デフォルトのアンカーリンクの動作を防ぐ
+        var elmHash = $(this).attr('href');
+        var target = $(elmHash);
         
-//         if (target.length) {
-//             $('.sp-main').css('scroll-snap-type', 'none');
-//             var pos = target.position().top + $('.sp-main').scrollTop();
-//             $('.sp-main').scrollTop(pos);
+        if (target.length) {
+            $('.sp-main').css('scroll-snap-type', 'none');
+            var pos = target.position().top + $('.sp-main').scrollTop();
+            $('.sp-main').scrollTop(pos);
 
-//             $('.sp-main').css('scroll-snap-type', 'y mandatory');
+            $('.sp-main').css('scroll-snap-type', 'y mandatory');
 
             
-//             $('.nav_feed').removeClass('hidden'); 
-//             $('.nav_index').removeClass('show'); 
-//             $('.overlay').removeClass('show'); 
-//             $body.removeClass('noscroll');
-//             $('.numbers').removeClass('hidden'); 
-//         }
+            $('.nav_feed').removeClass('hidden'); 
+            $('.nav_index').removeClass('show'); 
+            $('.overlay').removeClass('show'); 
+            $body.removeClass('noscroll');
+            $('.numbers').removeClass('hidden'); 
+        }
 
-//         return false; 
-//     });
-// });
+        return false; 
+    });
+});
 
 
 $(window).on('load', function () {
