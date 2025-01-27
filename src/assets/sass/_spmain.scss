@@ -5,7 +5,7 @@
 
 
 .style{
-    padding-top: calc(100 / c.$spw) * 100%;
+    padding-top: calc(65 / c.$spw) * 100%;
 }
 
 .sp-main{
@@ -21,7 +21,9 @@
     height: 100vh;
     
 }
-
+.single{
+    margin-top: 22px;
+}
 .swiper{
     padding-top: 22px!important;
     .swiper-pagination{
@@ -55,7 +57,7 @@
   
 
 .items_detail{
-    margin: calc(23 / c.$spw) * 100% 0 calc(22 / c.$spw) * 100% calc(15 / c.$spw) * 100%;
+    margin: calc(23 / c.$spw) * 100% 0 0 calc(15 / c.$spw) * 100%;
     .item_name{
         display: inline-block;
         text-align: center;
@@ -86,20 +88,20 @@
             opacity: 1;
             transition: all .3s ease;
             @include pc{
-                font-size: calc(12 / c.$pcw * 100vw);
+                font-size: max(calc(12 / c.$pcw * 100vw),12px);
             }
         }
         .buy{
             font-size: calc(8.13 / c.$spw * 100vw);
             border: solid 0.5px #000;
             border-radius: 15px;
-            padding: 2.5px 5px 0;
+            padding: 1.5px 5px;
             margin-bottom: 2px;
             color: #000;
             background: none;
             transition: all .3s ease;
             @include pc{
-                font-size: calc(8.5 / c.$pcw * 100vw);
+                font-size: max(calc(8.5 / c.$pcw * 100vw),8.5px);
             }
         }
         

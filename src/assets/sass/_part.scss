@@ -11,7 +11,7 @@
     z-index: 450;
     top: 0;
     left: 0;
-    padding-top: calc(60 / c.$spw) * 100%;
+    padding-top: calc(50 / c.$spw) * 100%;
     
 }
 
@@ -81,11 +81,18 @@ h2{
     }
 
 }
+
+
 .numbers{
     display: flex;
     margin-left: 20px;
+    opacity: 1;
+    transition: opacity .2s ease;
+    &.hidden{
+        opacity: 0;
+    }
     .number{
-        font-size: calc(10 / c.$spw) * 100%;
+        font-size: calc(10 / c.$spw * 100vw);
         padding-right: 5px;
         color: #000;
         opacity: 0.5;
@@ -137,5 +144,49 @@ h2{
 .contents:has(#style5.on) .num_anchor .sp-numbers li:not(:nth-child(5)){
     opacity: 0.5;
 }
+.contents:has(#style6.on) .num_anchor .sp-numbers li:nth-child(6){
+    opacity: 1;
+}
 
+.contents:has(#style6.on) .num_anchor .sp-numbers li:not(:nth-child(6)){
+    opacity: 0.5;
+}
+.contents:has(#style7.on) .num_anchor .sp-numbers li:nth-child(7){
+    opacity: 1;
+}
+
+.contents:has(#style7.on) .num_anchor .sp-numbers li:not(:nth-child(7)){
+    opacity: 0.5;
+}
+.contents:has(#style8.on) .num_anchor .sp-numbers li:nth-child(8){
+    opacity: 1;
+}
+
+.contents:has(#style8.on) .num_anchor .sp-numbers li:not(:nth-child(8)){
+    opacity: 0.5;
+}
+.contents:has(#style9.on) .num_anchor .sp-numbers li:nth-child(9){
+    opacity: 1;
+}
+
+.contents:has(#style9.on) .num_anchor .sp-numbers li:not(:nth-child(9)){
+    opacity: 0.5;
+}
+.contents:has(#style10.on) .num_anchor .sp-numbers li:nth-child(10){
+    opacity: 1;
+}
+
+.contents:has(#style10.on) .num_anchor .sp-numbers li:not(:nth-child(10)){
+    opacity: 0.5;
+}
+.contents:has(#style11.on) .num_anchor .sp-numbers li:nth-child(11){
+    opacity: 1;
+}
+
+.contents:has(#style11.on) .num_anchor .sp-numbers li:not(:nth-child(11)){
+    opacity: 0.5;
+}
+.contents:has(#footer.on) .num_anchor .sp-numbers .number{
+    opacity: 0.5;
+}
 

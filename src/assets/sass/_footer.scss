@@ -2,10 +2,19 @@
 @use './_mixin' as *;
 @use './_common' as c;
 
+.sp-footer{
+    position: relative;
+}
+.footer_wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: calc(15.6  / c.$spw) * 100%;
+    margin-top: calc(123.6  / c.$spw) * 100%;
+}
+
 .footer_logo{
     width: calc(118.59 / c.$spw) * 100%;
-    margin-top: calc(125 / c.$spw) * 100%;
-    margin-left: calc(15.6  / c.$spw) * 100%;
     @include pc{
         width: calc(118.59 / c.$pcw) * 100%;
     }
@@ -14,7 +23,6 @@
 
 .footer_credit{
     margin-top: calc(27.4 / c.$spw) * 100%;
-    margin-left: calc(15.6  / c.$spw) * 100%;
     font-size: calc(9 / c.$spw * 100vw);
     line-height: 1.5;
     @include pc{
@@ -25,7 +33,6 @@
 .footer_sns{
     display: flex;
     margin-top: calc(23.4 / c.$spw) * 100%;
-    margin-left: calc(15.6  / c.$spw) * 100%;
     vertical-align: middle;
     align-items: center;
     gap: calc(13.9 / c.$spw) * 100%;
@@ -51,8 +58,6 @@
 
 .footer_copy{
     margin-top: calc(13.5 / c.$spw) * 100%;
-    margin-left: calc(15.6  / c.$spw) * 100%;
-    margin-bottom: calc(23.6  / c.$spw) * 100%;
     font-size: calc(8 /c.$spw * 100vw);
     @include pc{
         font-size: calc(8 /c.$pcw * 100vw);
