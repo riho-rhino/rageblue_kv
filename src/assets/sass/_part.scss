@@ -13,13 +13,21 @@
     left: 0;
     padding-top: calc(62 / c.$spw) * 100%;
     pointer-events:all;
-    &.hidden{
-        pointer-events: none;
+    @include pc{
+        margin-top: calc(28 / c.$pcw) * 100%;
+        padding-top: 0;
+        display: flex;
+        width: 100%;
+        max-width: 1500px;
+        vertical-align: middle;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
 }
 
-h2{
+.sp-logo{
     position: fixed;
     top: 21px;
     left: 20px;
@@ -27,26 +35,40 @@ h2{
     font-weight: normal;
     z-index: 500;
     line-height: 0;
+    a{
+        @include pc{
+            cursor: url('../img/cursol_circle.png') 0 17, auto!important;
+        }
+    }
     @include pc{
-        width: calc(96.25 / c.$pcw) * 100%;
-        top: 30.7px;
-        left: 28px;
-
+        display: none;
     }
 }
 .close_wrap{
+    cursor: url('../img/cursol_circle.png') 0 17, auto!important;
     position: fixed;
-    top: 19.3px;
-    right: 21.1px;
+    top: 0;
+    right: 0;
+    padding-top: 19.3px;
+    padding-right: 21.1px;
     opacity: 0;
     pointer-events: none;
+    width: 20%;
+    text-align: right;
     &.show{
         opacity: 1;
         pointer-events: all;
     }
     @include pc{
-        top: 28px;
-        right: 27.5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right: 28px;
+        padding-top: calc(28 / 1100) * 100%;
+        padding-bottom: calc(28 / 1100) * 100%;
+    }
+    @include full{
+        padding-right: 0;
     }
 }
 .close{
@@ -54,13 +76,13 @@ h2{
     vertical-align: middle;
     color: #333;
     line-height: 1;
-    width: 1em;
+    width: 19px;
     height: 0.03em;
     background: #000;
     position: relative;
     transform: rotate(45deg);
     @include pc{
-        width: 1.5em;
+        width: 19px;
         
     }
     &::before {
@@ -79,6 +101,7 @@ h2{
 
 
 .nav{
+    
     opacity: 1;
     pointer-events:all;
     width: calc(129 / c.$spw) * 100%;
@@ -86,13 +109,19 @@ h2{
     top: 15.3px;
     right: 20px;
     z-index: 500;
-    box-shadow: 0px 0px 5px 0px rgba(120, 120, 120, 0.84);
+    box-shadow: 0px 0px 5px 0px rgba(120, 120, 120, 0.54);
     border-radius: 30px;
     background: #fff;
+
     @include pc{
+        cursor: url('../img/cursol_circle.png') 0 17, auto!important;
+        position: absolute;
         width: calc(141.27 / c.$pcw) * 100%;
-        top: 28px;
-        right: 27.5px;
+        max-width: 141.27px;
+        top: 0;
+        right: 0;
+        margin-right: calc(27.5 / c.$pcw) * 100%;
+        margin-top: calc(29 / c.$pcw) * 100%;
     }
     &.hidden{
         opacity: 0;

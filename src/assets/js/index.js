@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 
-import { Pagination, Autoplay  } from 'swiper/modules';
+import { Pagination  } from 'swiper/modules';
 
 var $win = $(window);
 var $body       = $('body')
@@ -17,7 +17,7 @@ function tick(time) {
 
 async function opning() {
     $body.addClass('noscroll');
-    await tick(5000);
+    await tick(10000);
     $('.mv_wrap').fadeOut(1000);
     await tick(300);
     $body.removeClass('noscroll');
@@ -25,22 +25,18 @@ async function opning() {
 }
 
 $('.skip').on('click', function () {
+    $body.removeClass('noscroll');
     $('.mv_wrap').fadeOut(1000);
     $('.contents').addClass('clickshow');
-    $body.removeClass('noscroll');
+    
 });
 
 
 
 
 const swiper = new Swiper('.swiper', {
-    modules: [Pagination, Autoplay],
+    modules: [Pagination],
     loop: true,
-
-    autoplay: {
-        delay: 2000,
-        disableOnInteraction: true,
-      },
   // ページネーション
   pagination: {
     el: '.swiper-pagination',
@@ -53,7 +49,7 @@ const swiper = new Swiper('.swiper', {
     $('.close_wrap').addClass('show'); 
     $('.overlay').addClass('show'); 
     $('.numbers').addClass('hidden'); 
-    $('.top_wrap').addClass('hidden'); 
+    
     $body.addClass('noscroll');
 });
 
@@ -62,7 +58,7 @@ $('.close_wrap').on('click', function () {
     $('.nav').removeClass('hidden'); 
     $('.overlay').removeClass('show'); 
     $('.numbers').removeClass('hidden'); 
-    $('.top_wrap').removeClass('hidden'); 
+    
     $body.removeClass('noscroll');
 });
 
@@ -134,7 +130,7 @@ $(window).on('load', function () {
             $('.overlay').removeClass('show'); 
             $body.removeClass('noscroll');
             $('.numbers').removeClass('hidden'); 
-            $('.top_wrap').removeClass('hidden'); 
+            
         }
 
         return false; 

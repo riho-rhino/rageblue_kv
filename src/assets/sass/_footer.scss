@@ -19,10 +19,10 @@
 
 .footer_wrap{
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     margin-left: calc(15.6  / c.$spw) * 100%;
-    margin-top: calc(123.6  / c.$spw) * 100%;
+    margin-bottom: calc(23.4  / c.$spw) * 100%;
     @include pc{
         width: 100%;
         max-width: 1500px;
@@ -40,6 +40,11 @@
         width: calc(162.57 / c.$pcw) * 100%;
         max-width: 163px;
         margin-left: calc(28 / c.$pcw) * 100%;
+    }
+    a{
+        @include pc{
+            cursor: url('../img/cursol_circle.png') 0 17, auto;
+        }
     }
 
 }
@@ -75,6 +80,11 @@
             width: calc(17.76 / c.$pcw) * 100%;
             max-width: 18px;
         }
+        a{
+            @include pc{
+                cursor: url('../img/cursol_circle.png') 0 17, auto;
+            }
+        }
     }
     .insta,
     .line{
@@ -84,6 +94,11 @@
             width: calc(20.02 / c.$pcw) * 100%;
             max-width: 21px;
         }
+        a{
+            @include pc{
+                cursor: url('../img/cursol_circle.png') 0 17, auto;
+            }
+        }
     }
 }
     
@@ -91,8 +106,8 @@
 .footer_copy{
     margin-top: calc(13.5 / c.$spw) * 100%;
     font-size: calc(8 /c.$spw * 100vw);
-    margin-left: calc(28 / c.$pcw) * 100%;
     @include pc{
+        margin-left: calc(28 / c.$pcw) * 100%;
         margin-top: calc(12.3 / c.$pcw) * 100%;
         font-size: calc(8 /c.$pcw * 100vw);
     }

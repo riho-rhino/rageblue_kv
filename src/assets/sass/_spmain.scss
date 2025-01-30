@@ -34,18 +34,21 @@
       width: auto!important;
       line-height: 0;
       margin-right: 13px;
+      vertical-align: middle;
+      align-items: center;
     }
   }
 
 /* ページネーションのサイズと色 */
 .swiper-pagination-bullet {
-    background-color: #9D9D9D;
-    height: 2px!important;
+    background-color: #000;
+    height: 1.2px!important;
     width: 70px!important;
     border-radius: 0!important;
   }
   .swiper-pagination-bullet-active {
         background: #393939!important;
+        height: 2px!important;
     }
   .swiper-slide{
     line-height: 0;
@@ -57,9 +60,12 @@
   
 
 .items_detail{
-    margin: calc(23 / c.$spw) * 100% 0 0 calc(15 / c.$spw) * 100%;
+    margin: calc(23 / c.$spw) * 100% 0 0 20px;
     @include pc{
-        margin: calc(23 / c.$spw) * 100% 0 0 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 0 0 0;
     }
     .item_name{
         display: inline-block;
@@ -81,7 +87,10 @@
             display: flex;
             align-items: center;
             vertical-align: middle;
-            gap: 4.5px;
+            gap: 5px;
+            @include pc{
+                cursor: url('../img/cursol_circle.png') 0 17, auto!important;
+            }
         }
         span{
             line-height: 1;
@@ -122,7 +131,7 @@
 .item_flex{
     display: flex;
     vertical-align: middle;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 

@@ -10,10 +10,10 @@
     display: flex;
     justify-content: center;
     z-index: 400;
-    background-color:#fff;
     visibility: hidden;
     opacity: 0;
     transition: all .5s ease;
+    background-color: #fff;
     &.show{
         visibility: visible;
         opacity: 1;
@@ -25,12 +25,23 @@
     
 }
 .index_wrap{
-    padding-top: calc(63 / c.$spw) * 100%;
+    padding-top: calc(55 / c.$spw) * 100%;
     @include pc{
+        position: relative;
+        padding-top: 63px;
+        height: 100vh;
+        width: 100%;
+    }
+    @include full{
+        position: relative;
         padding-top: calc(63 / c.$pcw) * 100%;
-
+        height: 100vh;
+        width: calc(1100 / c.$pcw) * 100%;
+        max-width: 1500px;
+        margin: 0 auto;
     }
 }
+
 .index_inner {
     height: 100%;
     overflow: scroll; /* スクロール設定 */
@@ -45,6 +56,13 @@
         line-height: 0;
         @include pc{
             width: 20%;
+
+        }
+        a{
+            @include pc{
+                cursor: url('../img/cursol_circle.png') 0 17, auto!important;
+            }
+            
         }
     }
 }
@@ -52,8 +70,7 @@
 .index_logo{
     width: calc(118.59 / c.$spw) * 100%;
     margin-top: calc(125 / c.$spw) * 100%;
-    margin-left: calc(15.6  / c.$spw) * 100%;
-    
+    margin-left: calc(15.6  / c.$spw) * 100%;  
 }
 
 .index_credit{
@@ -98,7 +115,7 @@
 
 .pc-index_wrap{
     position: relative;
-    padding-top: calc(97.1 / c.$pcw) * 100%;
+    padding-top: calc(91 / 1100) * 100%;
     
 }
 
@@ -106,10 +123,14 @@
 
 .pc-index_credit{
     position: absolute;
+    left: 28px;
     top: 50%;
-    left: 0;
     transform: translateY(-50%);
-    font-size: calc(10 / c.$pcw * 100vw);
+    font-size: min(calc(10 / c.$pcw * 100vw),10px);
+    @include full{
+        left: 0;
+    }
+    
 }
 
 .pc-index_right{
@@ -119,6 +140,9 @@
     right: 28px;
     width: 100%;
     text-align: right;
+    @include full{
+        right: 0;
+    }
 
 }
 
@@ -134,12 +158,14 @@
     vertical-align: middle;
     align-items: center;
     justify-content: space-between;
-    width: calc(122 / c.$pcw) * 100%;
+    width: calc(122 / 1100) * 100%;
+    max-width: 122px;
     .x,
     .tiktok{
         @include pc{
             line-height: 0;
             width: calc(17.98 / 122) * 100%;
+            max-width: 18px;
         } 
     }
 
@@ -148,6 +174,7 @@
         @include pc{
             line-height: 0;
             width: calc(20.28 / 122) * 100%;
+            max-width: 20.3px;
         }
         
     }
@@ -156,15 +183,17 @@
 }
 
 .pc-index_logo{
-    width: calc(135.4 / c.$pcw) * 100%;
-    padding-right: calc(19 / c.$pcw) * 100%;
+    width: calc(135.4 / 1100) * 100%;
+    padding-right: calc(19 / 1100) * 100%;
+    margin-right: calc(19 / 1100) * 100%;
     border-right: solid #000 2px;
-    margin-right: calc(19 / c.$pcw) * 100%;
+    line-height: 0;
+    max-width: 134.5px;
 }
 
 .pc-index_copy{
     font-weight: lighter;
     width: 100%;
-    font-size: calc(8 / c.$pcw * 100vw);
-    margin-top: calc(13.4 / c.$pcw) * 100%;
+    font-size: min(calc(8 / c.$pcw * 100vw),8px);
+    margin-top: calc(13.4 / 1100) * 100%;
 }

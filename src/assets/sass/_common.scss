@@ -12,6 +12,15 @@ body{
       }
 }
 
+.contents{
+    max-width: 700px;
+    margin: 0 auto;
+    @include pc{
+        max-width: none;
+        margin: auto;
+    }
+}
+
 .pc{
     display: none;
 }

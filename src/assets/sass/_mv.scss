@@ -5,19 +5,23 @@
 
 .contents{
     opacity: 0;
+    display: none;
     &.show{
         transition: opacity .5s ease;
         opacity: 1;
+        display: block;
     }
     &.clickshow{
         transition: opacity 1s .3s ease;
         opacity: 1;
+        display: block;
     }
 }
 
 .mv_wrap{
     overflow: hidden;
-    height: 100vh;
+    height: 100dvh;
+    width: 100%;
     z-index: 600;
     position: fixed;
     top: 0;
@@ -27,15 +31,29 @@
 
 .mv{
     position: relative;
-    
+    height: 100dvh;
+    width: 100%;
+
+    video{
+        height: 100dvh;
+    }
+
+    .pcmovie{
+        height: 100dvh;
+    }
     .ttl-wrap{
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        margin-top: calc(460 / c.$spw) * 100%;
+        margin-bottom: calc(22 / c.$spw) * 100%;
         width: calc(276.84 / c.$spw) * 100%;
         text-align: center;
+        @include pc{
+            width: calc(746.67 / c.$pcw) * 100%;
+            margin-bottom: calc(44 / c.$pcw) * 100%;
+            max-width: 750px;
+        }
     }
     h1{
         width: 100%;
@@ -43,18 +61,26 @@
     }
     .subttl{
         font-size: calc(13 / c.$spw * 100vw);
-        margin-top: calc(14.6 / c.$spw) * 100%;
+        margin-top: calc(14.6 / 460) * 100%;
         color: #fff;
+        @include pc{
+            font-size: max(calc(27.92 / c.$pcw * 100vw),27.92px);
+            margin-top: calc(32 / 746.67) * 100%;
+        }
     }
 }
 
 .skip{
     text-align: center;
     color: #fff;
-    margin-top: calc(67.3 / c.$spw) * 100%;
+    margin-top: calc(67.3 / 460) * 100%;
     font-size: calc(10 / c.$spw * 100vw);
     position: relative;
     padding-bottom: 9px;
+    @include pc{
+        font-size: calc(12 / c.$pcw * 100vw);
+        margin-top: calc(96.7 / 746.67) * 100%;
+    }
     .arrow{
         width: 9px;
         height: 9px;
@@ -65,7 +91,7 @@
         bottom: 0;
         left: 50%;
         opacity: 1;
-        animation: arrow 3s infinite linear;
+        animation: arrow 2.5s infinite linear;
     }
 }
 

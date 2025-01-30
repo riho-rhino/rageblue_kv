@@ -12,7 +12,7 @@
 
 .pc-style{
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     content: "";
     display: block;
     .pc-style_inner{
@@ -52,7 +52,7 @@
 .pc-style_left,
 .pc-style_right{
     width: calc(345 / c.$pcw) * 100%;
-    max-width: 345px;
+    max-width: 390px;
 }
 .pc-style_right{
     .right_img{
@@ -68,6 +68,27 @@
     }
 }
 
+.pc-style_left{
+    position: relative;
+    height: 100dvh;
+    margin-left: calc(27.5 / c.$pcw) * 100%;
+}
+
+.pc_logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(96.25 / 345) * 100%;
+    // max-width: 96.25px;
+    margin-top: calc(30.7 / 345) * 100%;
+    
+    a{
+        @include pc{
+            cursor: url('../img/cursol_circle.png') 0 17, auto!important;
+        }
+    }
+}
+
 .pc_pagenation{
     position: absolute;
     left: 0;
@@ -75,7 +96,7 @@
     width: calc(123.5 / 345) * 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: calc(-310 / 345) * 100%;
+    margin-bottom: calc(62.3 / 345) * 100%;
     vertical-align: middle;
     align-items: center;
     .pagenation_left,
@@ -84,7 +105,7 @@
         background: #000;
     }   
     .pagenation_left{
-        height: 2px;
+        height: 3px;
     }
     .pagenation_right{
         height: 1px;
@@ -107,12 +128,13 @@
     bottom: 0;
     left: 0;
     opacity: 1;
-    margin-bottom: calc(-350 / 345) * 100%;
+    margin-bottom: calc(24.2 / 345) * 100%;
     
     span{
-        margin-right: 6px;
+        margin-right:5px;
         opacity: 0.5;
         line-height: 1;
+        font-size: max(calc(12 / c.$pcw * 100vw));
     }
     .celect{
         opacity: 1;
@@ -122,7 +144,7 @@
 
 .pc-style_center{
     width: calc(596 / c.$pcw) * 100%;
-    max-width: 600px;
+    max-width: 596px;
     position: relative;
     line-height: 0;
     

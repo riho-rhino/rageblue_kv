@@ -1,13 +1,20 @@
 // pcサイズ
 @mixin pc {
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}
+// pcサイズ
+
+@mixin full {
+  @media screen and (min-width: 1080px) {
     @content;
   }
 }
 
 // スマホサイズ
 @mixin sp {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 899px) {
     @content;
   }
 }
