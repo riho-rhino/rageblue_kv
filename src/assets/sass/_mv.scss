@@ -35,7 +35,8 @@
     width: 100%;
 
     video{
-        height: 100dvh;
+        // height: 100dvh;
+        width: 100%;
     }
 
     .pcmovie{
@@ -78,6 +79,7 @@
     position: relative;
     padding-bottom: 9px;
     @include pc{
+        cursor: url('../img/cursol_circle.png') 0 17, auto!important;
         font-size: calc(12 / c.$pcw * 100vw);
         margin-top: calc(96.7 / 746.67) * 100%;
     }

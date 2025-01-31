@@ -12,13 +12,14 @@
     
     overflow: auto;
     scroll-snap-type: y mandatory;
-    height: 100vh;
+    height: 100svh;
     
 }
 
 .sp-style{
     scroll-snap-align: start;
     height: 100vh;
+    // height: 100dvh;
 }
 
 .single{

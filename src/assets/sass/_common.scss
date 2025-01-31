@@ -5,6 +5,7 @@ $spw : 375;
 $pcw : 1280;
 
 body{
+    height: -webkit-fill-available;
     color: #000;
     font-family: Helvetica;
     &.noscroll {

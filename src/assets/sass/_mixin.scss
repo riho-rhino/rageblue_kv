@@ -6,8 +6,15 @@
 }
 // pcサイズ
 
+
+
+@mixin small {
+  @media screen and (min-width: 1100px) {
+    @content;
+  }
+}
 @mixin full {
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1500px) {
     @content;
   }
 }

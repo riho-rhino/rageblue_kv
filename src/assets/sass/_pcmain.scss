@@ -94,6 +94,7 @@
     left: 0;
     bottom: 0;
     width: calc(123.5 / 345) * 100%;
+    max-width: 125px;
     display: flex;
     justify-content: space-between;
     margin-bottom: calc(62.3 / 345) * 100%;
@@ -105,20 +106,20 @@
         background: #000;
     }   
     .pagenation_left{
-        height: 3px;
+        height: 1.5px;
     }
     .pagenation_right{
-        height: 1px;
+        height: 0.5px;
     }
 }
 
 .pc-style_left{
     &.change{
         .pagenation_left{
-            height: 1px;
+            height: 0.5px;
         }
         .pagenation_right{
-            height: 2px;
+            height: 1.5px;
         }
     }
 }
@@ -131,10 +132,10 @@
     margin-bottom: calc(24.2 / 345) * 100%;
     
     span{
-        margin-right:5px;
+        margin-right:6.7px;
         opacity: 0.5;
         line-height: 1;
-        font-size: max(calc(12 / c.$pcw * 100vw));
+        font-size: min(calc(12 / c.$pcw * 100vw),12px);
     }
     .celect{
         opacity: 1;

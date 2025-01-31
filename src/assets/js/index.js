@@ -54,6 +54,7 @@ const swiper = new Swiper('.swiper', {
 });
 
 $('.close_wrap').on('click', function () {
+    console.log('CKICK');
     $(this).removeClass('show');
     $('.nav').removeClass('hidden'); 
     $('.overlay').removeClass('show'); 
@@ -116,6 +117,7 @@ $(window).on('load', function () {
         e.preventDefault(); // デフォルトのアンカーリンクの動作を防ぐ
         var elmHash = $(this).attr('href');
         var target = $(elmHash);
+
         
         if (target.length) {
             $('.sp-main').css('scroll-snap-type', 'none');
